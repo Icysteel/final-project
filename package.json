@@ -1,0 +1,19 @@
+{
+  "name": "rhythm_project",
+  "version": "1.0.0",
+  "description": "Web application to visualize the travel time over a period between preselected intersesion.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Icysteel/final-project.git"
+  },
+  "author": "Nayden Stoykov and Miroslav Vaklinov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Icysteel/final-project/issues"
+  },
+  "homepage": "https://github.com/Icysteel/final-project#readme"
+}
