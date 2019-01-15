@@ -1,0 +1,15 @@
+[
+  {
+    "name": "mysql",
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "root",
+    "database": "m-n_project",
+    "synchronize": true,
+    "entities": [
+      "src/data/entities/*.entity.ts"
+    ]
+  }
+]

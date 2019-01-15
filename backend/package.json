@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Server for the Final Project",
+  "description": "Server for phone app",
   "author": "Nayden Stoykov and Miroslav Vaklinov",
   "license": "MIT",
   "scripts": {
