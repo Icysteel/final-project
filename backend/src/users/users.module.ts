@@ -1,5 +1,4 @@
 import { AuthModule } from './../auth/auth.module';
-import { AuthService } from './../auth/auth.service';
 import { CoreModule } from './../common/core/core.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
@@ -12,4 +11,4 @@ import { UsersController } from './users.controller';
   exports: [],
   controllers: [UsersController],
 })
-export class UsersModule { }
+export class UsersModule {}

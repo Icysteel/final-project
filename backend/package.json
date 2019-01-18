@@ -1,8 +1,8 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Server for phone app",
-  "author": "Nayden Stoykov and Miroslav Vaklinov",
+  "description": "Server for InTime app",
+  "author": "Telerik Academy",
   "license": "MIT",
   "scripts": {
     "build": "tsc",

@@ -1,33 +1,24 @@
-import { QuizModule } from './quiz/quiz.module';
-import { ConfigService } from './config/config.service';
 import { Module, HttpModule } from '@nestjs/common';
 import { ConfigModule } from './config/config.module';
 import { AuthModule } from './auth/auth.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { CoreModule } from './common/core/core.module';
+import { DatabaseModule } from './database/database.module';
+import { TableReportsModule } from './table-reports/table-reports.module';
+import { DevicesModule } from './devices/devices.module';
 
 @Module({
   imports: [
     ConfigModule,
     HttpModule,
     AuthModule,
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule, QuizModule],
-      useFactory: async (configService: ConfigService) => ({
-        type: configService.dbType as any,
-        host: configService.dbHost,
-        port: configService.dbPort,
-        username: configService.dbUsername,
-        password: configService.dbPassword,
-        database: configService.dbName,
-        entities: ['./src/data/entities/*.entity.ts'],
-      }),
-      inject: [ConfigService],
-    }),
+    DatabaseModule,
     UsersModule,
-    QuizModule,
-    CoreModule],
+    CoreModule,
+    DatabaseModule,
+    TableReportsModule,
+    DevicesModule,
+  ],
   controllers: [],
   providers: [],
 })

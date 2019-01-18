@@ -22,10 +22,6 @@ export class ConfigService {
     this.envConfig = this.validateInput(config);
   }
 
-  /**
-   * Ensures all needed variables are set, and returns the validated JavaScript object
-   * including the applied default values.
-   */
   private validateInput(envConfig: EnvConfig): EnvConfig {
     const envVarsSchema: Joi.ObjectSchema = Joi.object({
       NODE_ENV: Joi.string()
@@ -38,7 +34,7 @@ export class ConfigService {
       DB_HOST: Joi.string().default('localhost'),
       DB_PORT: Joi.number().default(3306),
       DB_USERNAME: Joi.string().default('root'),
-      DB_PASSWORD: Joi.string().required(),
+      DB_PASSWORD: Joi.string().default('123'),
       DB_DATABASE_NAME: Joi.string().required(),
     });
 

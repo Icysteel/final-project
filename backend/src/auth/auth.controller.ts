@@ -1,10 +1,10 @@
 import { UserLoginDTO } from '../models/user/user-login.dto';
-import { AdminGuard } from './../common';
 import { UserRegisterDTO } from '../models/user/user-register.dto';
 import { UsersService } from '../common/core/users.service';
+import {
+  Controller, Post, Body, ValidationPipe, BadRequestException, HttpException, HttpStatus,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { Get, Controller, UseGuards, Post, Body, BadRequestException, ValidationPipe } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 export class AuthController {
@@ -13,12 +13,6 @@ export class AuthController {
     private readonly authService: AuthService,
     private readonly usersService: UsersService,
   ) { }
-
-  @Get()
-  @UseGuards(AuthGuard(), AdminGuard)
-  root(): string {
-    return 'root';
-  }
 
   @Post('login')
   async sign(@Body(new ValidationPipe({
@@ -30,7 +24,7 @@ export class AuthController {
       throw new BadRequestException('Wrong credentials!');
     }
 
-    return token;
+    return JSON.stringify(token);
   }
 
   @Post('register')
@@ -39,18 +33,13 @@ export class AuthController {
       transform: true,
       whitelist: true,
     }))
-    user: UserRegisterDTO): Promise<string> {
-
+    user: UserRegisterDTO,
+  ): Promise<string> {
     try {
       await this.usersService.registerUser(user);
-      return 'saved';
-    } catch (error) {
-      await new Promise((resolve, reject) => {
-        resolve();
-      });
-
-      return (error.message);
+      return JSON.stringify('Successful registration!');
+  } catch (error) {
+    throw new HttpException(error.message, HttpStatus.CONFLICT);
     }
   }
-
 }
