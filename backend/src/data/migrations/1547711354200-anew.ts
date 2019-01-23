@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class anew1547711354200 implements MigrationInterface {
+export class Anew1547711354200 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.query("ALTER TABLE `chart_reports` DROP FOREIGN KEY `FK_a3f88a9fcfb779ed8c855ec7b4c`");

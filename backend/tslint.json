@@ -9,7 +9,7 @@
     "rules": {
         "eofline": false,
         "quotemark": [
-            true,
+            false,
             "single"
         ],
         "indent": false,
@@ -20,7 +20,7 @@
             false
         ],
         "max-line-length": [
-            true,
+            false,
             150
         ],
         "member-ordering": [
@@ -38,9 +38,7 @@
         "arrow-parens": false,
         "object-literal-sort-keys": false,
         "no-unused-expression": false,
-        "max-classes-per-file": [
-            false
-        ],
+        "max-classes-per-file": false,
         "variable-name": [
             false
         ],
