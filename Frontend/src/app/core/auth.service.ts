@@ -17,7 +17,7 @@ export class AuthService {
   public constructor(
     private readonly storageService: StorageService,
     private readonly requester: RequesterService
-  ) {}
+  ) { }
 
   public get isLoggedIn$(): Observable<boolean> {
     return this.isLoggedInSubject$.asObservable();
@@ -41,13 +41,12 @@ export class AuthService {
       );
   }
 
-  public logoutUser(): Observable<any> {
-    return this.requester.post('http://localhost:3000/logout', null).pipe(
-      tap(() => {
-        this.storageService.removeItem('token');
-        this.isLoggedInSubject$.next(false);
-      })
-    );
+  public logoutUser(): void {
+
+    this.storageService.removeItem('token');
+    this.isLoggedInSubject$.next(false);
+    this.storageService.removeItem('token');
+
   }
 
   private hasToken(): boolean {
