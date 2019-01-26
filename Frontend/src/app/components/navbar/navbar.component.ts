@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private readonly authService: AuthService,
     private readonly router: Router,
     private readonly notificator: NotificatorService
-  ) {}
+  ) { }
 
   public get searchCallback(): () => void {
     // if you are going to pass a function to an input field
@@ -39,10 +39,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   public logout(): void {
-    this.authService.logoutUser().subscribe(() => {
-      this.router.navigate(['/home']);
-      this.notificator.success('Logged out successfully!');
-    });
+    this.authService.logoutUser();
+    this.router.navigate(['/home']);
+    this.notificator.success('Logged out successfully!');
+
   }
 
   private searchNavigationCallback(): void {

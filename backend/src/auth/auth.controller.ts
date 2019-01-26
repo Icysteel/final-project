@@ -1,9 +1,7 @@
 import { UserLoginDTO } from '../models/user/user-login.dto';
 import { UserRegisterDTO } from '../models/user/user-register.dto';
 import { UsersService } from '../common/core/users.service';
-import {
-  Controller, Post, Body, ValidationPipe, BadRequestException, HttpException, HttpStatus,
-} from '@nestjs/common';
+import { Controller, Post, Body, ValidationPipe, BadRequestException, HttpException, HttpStatus } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 @Controller()
@@ -38,8 +36,8 @@ export class AuthController {
     try {
       await this.usersService.registerUser(user);
       return JSON.stringify('Successful registration!');
-  } catch (error) {
-    throw new HttpException(error.message, HttpStatus.CONFLICT);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.CONFLICT);
     }
   }
 }
