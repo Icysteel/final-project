@@ -6,9 +6,9 @@ import { UserDataService } from '../services/users-data.service';
   templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
-  constructor(private readonly usersService: UserDataService) {}
+  constructor(private readonly usersService: UserDataService) { }
 
   ngOnInit() {
-    this.usersService.getAllUsers().subscribe(console.log);
+    this.usersService.getAllUsers().subscribe();
   }
 }

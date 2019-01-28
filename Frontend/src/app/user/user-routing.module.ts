@@ -8,7 +8,7 @@ import { AnonymousRouteActivatorService } from '../core/route-guards/anonymous-r
 import { EngineerComponent } from './engineer/engineer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users/all', pathMatch: 'full' },
+
   {
     path: 'all',
     component: UsersListComponent,

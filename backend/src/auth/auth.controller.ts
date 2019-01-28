@@ -3,6 +3,7 @@ import { UserRegisterDTO } from '../models/user/user-register.dto';
 import { UsersService } from '../common/core/users.service';
 import { Controller, Post, Body, ValidationPipe, BadRequestException, HttpException, HttpStatus } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { User } from 'src/data/entities/user.entity';
 
 @Controller()
 export class AuthController {
@@ -35,6 +36,24 @@ export class AuthController {
   ): Promise<string> {
     try {
       await this.usersService.registerUser(user);
+      return JSON.stringify('Successful registration!');
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.CONFLICT);
+    }
+  }
+
+  @Post('add-engineer')
+  async addEnginner(
+    @Body(new ValidationPipe({
+      transform: true,
+      whitelist: true,
+    }))
+    user: User,
+    admin: User,
+  ): Promise<string> {
+    try {
+      await this.usersService.addUser(user, admin);
+
       return JSON.stringify('Successful registration!');
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.CONFLICT);

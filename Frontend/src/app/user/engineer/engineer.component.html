@@ -1,11 +1,11 @@
 <!-- Template driven forms -->
-<h1>Add Engineer</h1>
+<h1>Add Egnineer</h1>
 <hr>
 <div>
   <form novalidate #regForm="ngForm" (ngSubmit)="this.register(regForm.value)">
     <div class="form-group">
-      <label for="email">Name:</label>
-      <input [(ngModel)]="email" name="name" required id="name" type="name" class="form-control" placeholder="Name..." />
+      <label for="email">Email:</label>
+      <input [(ngModel)]="email" name="email" required id="email" type="email" class="form-control" placeholder="email..." />
     </div>
 
     <div class="form-group">
@@ -13,7 +13,7 @@
       <input [(ngModel)]="password" name="password" required id="password" type="password" class="form-control"
         placeholder="Password..." />
     </div>
-    <button [disabled]="regForm.invalid" type="submit" class="btn btn-primary">Add</button>
+    <button [disabled]="regForm.invalid" type="submit" class="btn btn-primary">Register</button>
     <button type="button" class="btn btn-default" (click)="this.cancel()">Cancel</button>
   </form>
 </div>

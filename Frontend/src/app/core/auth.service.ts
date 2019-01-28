@@ -34,7 +34,7 @@ export class AuthService {
 
   public registerEngineer(user: EnginnerModel): Observable<any> {
     return this.requester.post(
-      'http://localhost:3000/register',
+      'http://localhost:3000/users',
       JSON.stringify(user)
     );
   }
@@ -48,6 +48,7 @@ export class AuthService {
           this.isLoggedInSubject$.next(true);
         })
       );
+
   }
 
   public logoutUser(): void {
