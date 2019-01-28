@@ -16,6 +16,7 @@ import { ServerErrorComponent } from './components/server-error/server-errror.co
 import { ServerErrorInterceptor } from './interceptors/server-error-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     CoreModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [
     {
@@ -53,4 +54,4 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

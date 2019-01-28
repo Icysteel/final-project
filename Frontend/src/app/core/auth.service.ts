@@ -4,6 +4,7 @@ import { RequesterService } from './requester.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { UserModel } from '../user/models/user.model';
+import { EnginnerModel } from '../user/models/engineer.model';
 
 @Injectable()
 export class AuthService {
@@ -31,12 +32,19 @@ export class AuthService {
     );
   }
 
+  public registerEngineer(user: EnginnerModel): Observable<any> {
+    return this.requester.post(
+      'http://localhost:3000/register',
+      JSON.stringify(user)
+    );
+  }
+
   public loginUser(user: UserModel): Observable<any> {
     return this.requester
       .post('http://localhost:3000/login', JSON.stringify(user))
       .pipe(
         tap(response => {
-          this.storageService.setItem('token', (<any>response).token);
+          this.storageService.setItem('token', (<any>response));
           this.isLoggedInSubject$.next(true);
         })
       );
@@ -53,4 +61,5 @@ export class AuthService {
   private hasToken(): boolean {
     return !!this.storageService.getItem('token');
   }
+
 }

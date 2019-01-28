@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { UsersListComponent } from './users-list/users-list.component';
 import { AuthRouteActivatorService } from '../core/route-guards/auth-route-activator.service';
 import { AnonymousRouteActivatorService } from '../core/route-guards/anonymous-route-activator.service';
+import { EngineerComponent } from './engineer/engineer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/users/all', pathMatch: 'full' },
@@ -23,6 +24,11 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     canActivate: [AnonymousRouteActivatorService]
+  },
+  {
+    path: 'add-engineer',
+    component: EngineerComponent,
+    canActivate: [AuthRouteActivatorService]
   }
 ];
 
@@ -30,4 +36,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserRoutingModule {}
+export class UserRoutingModule { }

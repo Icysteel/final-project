@@ -1,14 +1,14 @@
 import { AuthService } from '../../core/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '../models/user.model';
 import { Router } from '@angular/router';
 import { NotificatorService } from 'src/app/core/notificator.service';
+import { EnginnerModel } from '../models/engineer.model';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
+  templateUrl: './engineer.component.html'
 })
-export class RegisterComponent {
+export class EngineerComponent {
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router,
@@ -16,11 +16,11 @@ export class RegisterComponent {
   ) { }
 
 
-  public register(userData: UserModel): void {
-    this.authService.registerUser(userData).subscribe(
+  public register(userData: EnginnerModel): void {
+    this.authService.registerEngineer(userData).subscribe(
       () => {
         this.notificator.success('Registered successfully!');
-        this.router.navigate(['users/login']);
+        this.router.navigate(['/home']);
       },
       error => {
         console.log(error);

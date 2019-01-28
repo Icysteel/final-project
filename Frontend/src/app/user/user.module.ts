@@ -9,12 +9,14 @@ import { UserRoutingModule } from './user-routing.module';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserDataService } from './services/users-data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EngineerComponent } from './engineer/engineer.component';
 
 @NgModule({
   imports: [SharedModule, UserRoutingModule, FormsModule, ReactiveFormsModule],
   declarations: [
     RegisterComponent,
     LoginComponent,
+    EngineerComponent,
     UsersListComponent,
     SentenceCasePipe,
     BoldMeDirective,

@@ -31,14 +31,6 @@ export class LoginComponent implements OnInit {
       email,
       password,
     });
-
-    // const email = new FormControl('', [Validators.pattern(''), Validators.minLength(3)]);
-    // const password = new FormControl('', []);
-
-    // this.loginForm = new FormGroup({
-    //   email,
-    //   password,
-    // });
   }
 
 
