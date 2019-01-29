@@ -10,8 +10,6 @@ import { NotificatorService } from 'src/app/core/notificator.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  public DEFAULT_SEARCH = 'Nelson Mandela';
-  public SEARCH_PLACEHOLDER = 'Search Posts..';
 
   public isLoggedIn: boolean;
   private loginSubscription: Subscription;
@@ -22,11 +20,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private readonly notificator: NotificatorService
   ) { }
 
-  public get searchCallback(): () => void {
-    // if you are going to pass a function to an input field
-    // the function will lose its context - bind it
-    return this.searchNavigationCallback.bind(this);
-  }
 
   public ngOnInit(): void {
     this.authService.isLoggedIn$.subscribe(
@@ -44,7 +37,4 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.notificator.success('Logged out successfully!');
   }
 
-  private searchNavigationCallback(): void {
-    this.router.navigate(['/posts']);
-  }
 }

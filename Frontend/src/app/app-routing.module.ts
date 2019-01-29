@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
 
-  { path: 'posts', loadChildren: './posts/posts.module#PostsModule' },
   { path: 'users', loadChildren: './user/user.module#UserModule' },
 
   { path: 'not-found', component: NotFoundComponent },
