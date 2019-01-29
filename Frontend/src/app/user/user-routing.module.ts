@@ -1,3 +1,4 @@
+import { DevicesListComponent } from './../devices/users-list/devices-list.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'add-engineer',
     component: EngineerComponent,
+    canActivate: [AuthRouteActivatorService]
+  },
+  {
+    path: 'devices',
+    component: DevicesListComponent,
     canActivate: [AuthRouteActivatorService]
   }
 ];

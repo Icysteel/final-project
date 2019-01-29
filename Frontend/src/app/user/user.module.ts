@@ -1,3 +1,5 @@
+import { DevicesListComponent } from './../devices/users-list/devices-list.component';
+import { DevicesService } from './../devices/devices.service';
 import { LengthDirective } from './../directives/length.directive';
 import { BoldMeDirective } from './../directives/bold.directive';
 import { SentenceCasePipe } from './../pipes/sentence-case.pipe';
@@ -17,10 +19,11 @@ import { EngineerComponent } from './engineer/engineer.component';
     RegisterComponent,
     LoginComponent,
     EngineerComponent,
+    DevicesListComponent,
     UsersListComponent,
     SentenceCasePipe,
     BoldMeDirective,
     LengthDirective],
-  providers: [UserDataService]
+  providers: [UserDataService, DevicesService]
 })
 export class UserModule { }
