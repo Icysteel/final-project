@@ -5,7 +5,6 @@ import { RequesterService } from './requester.service';
 import { StorageService } from './storage.service';
 import { NotificatorService } from './notificator.service';
 import { AuthService } from './auth.service';
-import { SearchService } from './search.service';
 
 @NgModule({
   providers: [
@@ -13,7 +12,6 @@ import { SearchService } from './search.service';
     StorageService,
     NotificatorService,
     AuthService,
-    SearchService,
     AuthRouteActivatorService,
     AnonymousRouteActivatorService
   ]
