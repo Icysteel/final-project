@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { UserModel } from '../user/models/user.model';
 import { EnginnerModel } from '../user/models/engineer.model';
+import { DeviceModel } from '../devices/device.model';
 
 @Injectable()
 export class AuthService {
@@ -36,6 +37,13 @@ export class AuthService {
     return this.requester.post(
       'http://localhost:3000/users',
       JSON.stringify(user)
+    );
+  }
+
+  public registerDevice(device: DeviceModel): Observable<any> {
+    return this.requester.post(
+      'http://localhost:3000/devices',
+      JSON.stringify(device)
     );
   }
 

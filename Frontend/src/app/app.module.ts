@@ -1,3 +1,4 @@
+
 import { SpinnerInterceptor } from './interceptors/spinner-interceptor.service';
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,6 +16,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ServerErrorComponent } from './components/server-error/server-errror.component';
 import { ServerErrorInterceptor } from './interceptors/server-error-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
+import { AgmCoreModule } from '@agm/core';
+import { MapsComponent } from './maps/maps/maps.component';
 
 
 @NgModule({
@@ -24,6 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     NotFoundComponent,
     ServerErrorComponent,
+    MapsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     CoreModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC0f-YBwWtejrfq6Utg3FFr4b3UG3oEJaY'
+    })
   ],
   providers: [
     {

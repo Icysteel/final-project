@@ -1,4 +1,6 @@
-import { DevicesListComponent } from './../devices/users-list/devices-list.component';
+
+import { AddDeviceComponent } from './../devices/add-device/add-device.component';
+import { DevicesListComponent } from './../devices/devices-list/devices-list.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,7 +17,6 @@ const routes: Routes = [
     component: UsersListComponent,
     canActivate: [AuthRouteActivatorService]
   },
-
   {
     path: 'login',
     component: LoginComponent,
@@ -35,7 +36,12 @@ const routes: Routes = [
     path: 'devices',
     component: DevicesListComponent,
     canActivate: [AuthRouteActivatorService]
-  }
+  },
+  {
+    path: 'add-device',
+    component: AddDeviceComponent,
+    canActivate: [AuthRouteActivatorService]
+  },
 ];
 
 @NgModule({

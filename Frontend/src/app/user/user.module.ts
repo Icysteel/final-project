@@ -1,4 +1,6 @@
-import { DevicesListComponent } from './../devices/users-list/devices-list.component';
+
+import { AddDeviceComponent } from './../devices/add-device/add-device.component';
+import { DevicesListComponent } from './../devices/devices-list/devices-list.component';
 import { DevicesService } from './../devices/devices.service';
 import { LengthDirective } from './../directives/length.directive';
 import { BoldMeDirective } from './../directives/bold.directive';
@@ -21,6 +23,7 @@ import { EngineerComponent } from './engineer/engineer.component';
     EngineerComponent,
     DevicesListComponent,
     UsersListComponent,
+    AddDeviceComponent,
     SentenceCasePipe,
     BoldMeDirective,
     LengthDirective],

@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <a class="navbar-brand">InTime</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -11,7 +12,8 @@
                 <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a>
             </li>
             <li class="nav-item" *ngIf="this.isLoggedIn">
-                <a class="nav-link" [routerLink]="['/users/all']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Users</a>
+                <a class="nav-link" [routerLink]="['/users/all']" [routerLinkActive]="'active'"
+                    [routerLinkActiveOptions]="{exact: true}">Users</a>
             </li>
         </ul>
 
@@ -25,6 +27,8 @@
             <ng-container *ngIf="this.isLoggedIn"></ng-container>
             <button class="nav-link btn btn-outline-primary my-2 my-sm-0" [routerLink]="['/users/add-engineer']">Add
                 Engineer</button>
+            <button class="nav-link btn btn-outline-primary my-2 my-sm-0" [routerLink]="['/users/add-device']">Add
+                Device</button>
         </ng-container>
     </div>
 </nav>
