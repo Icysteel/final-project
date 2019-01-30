@@ -1,3 +1,6 @@
-<agm-map>
-  <agm-marker *ngFor="let data of devices; let i = index" [latitude]="data.latitude" [longitude]="data.longitude"></agm-marker>
+<agm-map [latitude]="lat" [longitude]="lng">
+
+  <agm-marker *ngFor="let device of devices" [latitude]="device.latitude" [longitude]="device.longitude">
+
+  </agm-marker>
 </agm-map>

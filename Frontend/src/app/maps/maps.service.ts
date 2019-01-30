@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DeviceModel } from '../devices/device.model';
 
 
 interface Location {
@@ -14,6 +15,6 @@ export class MapsService {
   constructor(private http: HttpClient) { }
 
   getLocation() {
-    return this.http.get<Location[]>('http://localhost:3000/devices');
+    return this.http.get<DeviceModel[]>('http://localhost:3000/devices');
   }
 }

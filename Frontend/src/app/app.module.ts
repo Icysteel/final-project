@@ -1,3 +1,4 @@
+import { MapsService } from './maps/maps.service';
 
 import { SpinnerInterceptor } from './interceptors/spinner-interceptor.service';
 import { HomeComponent } from './components/home/home.component';
@@ -58,7 +59,8 @@ import { MapsComponent } from './maps/maps/maps.component';
       provide: HTTP_INTERCEPTORS,
       useClass: ServerErrorInterceptor,
       multi: true
-    }
+    },
+    MapsService
   ],
   bootstrap: [AppComponent]
 })
