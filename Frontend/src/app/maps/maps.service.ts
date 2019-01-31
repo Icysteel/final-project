@@ -3,10 +3,7 @@ import { Injectable } from '@angular/core';
 import { DeviceModel } from '../devices/device.model';
 
 
-interface Location {
-  latitude: string;
-  longitude: string;
-}
+
 @Injectable({
   providedIn: 'root'
 })

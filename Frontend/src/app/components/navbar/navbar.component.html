@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand">InTime</a>
+    <a class="navbar-brand" id="brand">InTime</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,27 +8,31 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a>
+            <li class="active">
+                <button class="btn  btn-outline-primary my-2 my-sm-0 nav-link btn-menu" [routerLink]="['/home']"
+                    [routerLinkActive]="'btn-outline-primary2'">Home</button>
             </li>
             <li class="nav-item" *ngIf="this.isLoggedIn">
-                <a class="nav-link" [routerLink]="['/users/all']" [routerLinkActive]="'active'"
-                    [routerLinkActiveOptions]="{exact: true}">Users</a>
+                <button class="nav-link btn btn-outline-primary my-2 my-sm-0 nav-link nav-link.active btn-menu"
+                    [routerLink]="['/users/all']" [routerLinkActive]="'btn-outline-primary2'" [routerLinkActiveOptions]="{exact: true}">Users</button>
             </li>
         </ul>
 
         <ng-container *ngIf="!this.isLoggedIn">
-            <button class="nav-link btn btn-outline-primary my-2 my-sm-0" [routerLink]="['/users/register']">Register</button>
+            <button class="nav-link btn btn-outline-primary my-2 my-sm-0 " [routerLink]="['/users/register']">Register</button>
             <button class="nav-link btn btn-outline-primary my-2 my-sm-0" [routerLink]="['/users/login']">Login</button>
         </ng-container>
         <ng-container *ngIf="this.isLoggedIn">
-            <button class="nav-link btn btn-outline-primary my-2 my-sm-0" (click)="this.logout()">Logout</button>
+
 
             <ng-container *ngIf="this.isLoggedIn"></ng-container>
-            <button class="nav-link btn btn-outline-primary my-2 my-sm-0" [routerLink]="['/users/add-engineer']">Add
+            <button class="nav-link btn btn-outline-primary my-2 my-sm-0 nav-link nav-link.active btn-menu"
+                [routerLink]="['/users/add-engineer']" [routerLinkActive]="'btn-outline-primary2'">Add
                 Engineer</button>
-            <button class="nav-link btn btn-outline-primary my-2 my-sm-0" [routerLink]="['/users/add-device']">Add
+            <button class="nav-link btn btn-outline-primary my-2 my-sm-0 nav-link nav-link.active btn-menu"
+                [routerLink]="['/users/add-device']" [routerLinkActive]="'btn-outline-primary2'">Add
                 Device</button>
+            <button class="nav-link btn btn-outline-primary my-2 my-sm-0 btn-menu" (click)="this.logout()">Logout</button>
         </ng-container>
     </div>
 </nav>

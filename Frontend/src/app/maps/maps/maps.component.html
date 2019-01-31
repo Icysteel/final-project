@@ -1,6 +1,6 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-
-  <agm-marker *ngFor="let device of devices" [latitude]="device.latitude" [longitude]="device.longitude">
-
-  </agm-marker>
-</agm-map>
+<div class="map" (onClick)="simpleMarkerHandler()">
+  <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+    <agm-marker *ngFor="let device of devices" [latitude]="device.latitude" [longitude]="device.longitude">
+    </agm-marker>
+  </agm-map>
+</div>

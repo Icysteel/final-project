@@ -8,7 +8,7 @@ import { ServerErrorComponent } from './components/server-error/server-errror.co
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: MapsComponent },
 
   { path: 'users', loadChildren: './user/user.module#UserModule' },
   { path: 'maps', component: MapsComponent },

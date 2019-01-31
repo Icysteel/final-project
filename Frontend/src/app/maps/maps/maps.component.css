@@ -1,5 +1,12 @@
 agm-map{
     height: 400px;
   width: 100%;
-  background-color: grey;
+
 }
+
+.map {
+  margin:auto;
+  width:50%;
+padding-top:40px
+}
+
