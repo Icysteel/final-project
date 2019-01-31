@@ -8,19 +8,29 @@ import { Observable } from 'rxjs';
   templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
+  constructor(private readonly usersService: UserDataService) { }
   http: any;
   baseUrl: string;
-  constructor(private readonly usersService: UserDataService) { }
 
   users: UserModel[];
+
+  columnDefs = [
+    { headerName: 'Email', field: 'email' },
+    { headerName: 'Delete', field: 'this.deleteUser(user' }
+  ];
+
+  rowData: UserModel[];
 
   ngOnInit() {
     this.usersService.getAllUsers().subscribe(data => {
       this.users = data;
+      this.rowData = data;
     });
   }
 
+
   deleteUser(user) {
+    console.log('Deleted');
     this.usersService.deleteUser(user.email).subscribe(res => {
       console.log('Deleted');
     });

@@ -13,10 +13,12 @@ export class MapsComponent implements OnInit {
 
   constructor(private map: MapsService) { }
 
+
   devices: DeviceModel[];
   lat = 42.6354123;
   lng = 23.3025379;
 
+  // custom map styling
   styles = [
     {
       'elementType': 'geometry',
@@ -204,6 +206,7 @@ export class MapsComponent implements OnInit {
     }
   ];
 
+
   ngOnInit() {
     this.map.getLocation().subscribe(data => {
       this.devices = data;
@@ -213,7 +216,5 @@ export class MapsComponent implements OnInit {
     });
   }
 
-  simpleMarkerHandler() {
-    alert('Simple Component\'s function...');
-  }
+
 }

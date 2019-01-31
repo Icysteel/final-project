@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand" id="brand">InTime</a>
+    <a class="navbar-brand" id="brand"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,12 +9,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="active">
-                <button class="btn  btn-outline-primary my-2 my-sm-0 nav-link btn-menu" [routerLink]="['/home']"
-                    [routerLinkActive]="'btn-outline-primary2'">Home</button>
+                <a class="btn  btn-outline-primary my-2 my-sm-0 nav-link btn-menu" [routerLink]="['/home']"
+                    [routerLinkActive]="'btn-outline-primary2'">Home</a>
             </li>
             <li class="nav-item" *ngIf="this.isLoggedIn">
-                <button class="nav-link btn btn-outline-primary my-2 my-sm-0 nav-link nav-link.active btn-menu"
-                    [routerLink]="['/users/all']" [routerLinkActive]="'btn-outline-primary2'" [routerLinkActiveOptions]="{exact: true}">Users</button>
+                <a class="nav-link btn btn-outline-primary my-2 my-sm-0 nav-link nav-link.active btn-menu" [routerLink]="['/users/all']"
+                    [routerLinkActive]="'btn-outline-primary2'" [routerLinkActiveOptions]="{exact: true}">Users</a>
             </li>
         </ul>
 

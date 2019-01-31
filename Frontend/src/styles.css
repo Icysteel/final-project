@@ -28,6 +28,7 @@
 body {
     background: black;
     color:#f90;
+
 }
 
 
@@ -42,6 +43,13 @@ body {
     color:#f90;
 }
 
+.btn-primary {
+    color:#f90;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 12px;
+    border-color: #f90;
+}
 
 .active {
     background-color: transparent; 
@@ -70,3 +78,30 @@ button {
     border-radius: 12px;
     border:1px solid #f90
   }
+
+.navbar a {
+    color: #f90 !important;
+}
+
+.navbar-brand:before {
+    content: 'In';
+    color: white;
+
+}
+.navbar-brand:after {
+    content: 'Time';
+    color: #f90;
+
+}
+#brand {
+    font-size: 1.5rem
+}
+
+.ag-cell {
+    background:black;
+    color:white
+}
+.ag-center-cols-viewport{
+    background:black;
+    color:white
+}

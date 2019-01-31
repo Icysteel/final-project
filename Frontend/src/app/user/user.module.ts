@@ -1,4 +1,3 @@
-
 import { AddDeviceComponent } from './../devices/add-device/add-device.component';
 import { DevicesListComponent } from './../devices/devices-list/devices-list.component';
 import { DevicesService } from './../devices/devices.service';
@@ -14,9 +13,11 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UserDataService } from './services/users-data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EngineerComponent } from './engineer/engineer.component';
+import { AgGridModule } from 'ag-grid-angular';
+
 
 @NgModule({
-  imports: [SharedModule, UserRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [SharedModule, UserRoutingModule, FormsModule, ReactiveFormsModule, AgGridModule.withComponents([])],
   declarations: [
     RegisterComponent,
     LoginComponent,
