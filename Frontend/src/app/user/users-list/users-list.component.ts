@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../services/users-data.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html'
@@ -16,7 +17,14 @@ export class UsersListComponent implements OnInit {
 
   columnDefs = [
     { headerName: 'Email', field: 'email' },
-    { headerName: 'Delete', field: 'this.deleteUser(user' }
+    {
+      headerName: 'email',
+      cellRenderer: 'deleteUser()',
+      cellRendererParams: {
+        onClick: console.log('working'),
+        label: 'Click 1'
+      }
+    }
   ];
 
   rowData: UserModel[];

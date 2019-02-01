@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DeviceModel } from '../devices/device.model';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

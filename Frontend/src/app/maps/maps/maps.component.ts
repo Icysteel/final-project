@@ -1,6 +1,7 @@
 import { MapsService } from './../maps.service';
 import { Component, OnInit } from '@angular/core';
 import { DeviceModel } from 'src/app/devices/device.model';
+import { google } from '@agm/core/services/google-maps-types';
 
 @Component({
   selector: 'app-maps',
@@ -12,6 +13,7 @@ export class MapsComponent implements OnInit {
 
 
   constructor(private map: MapsService) { }
+
 
 
   devices: DeviceModel[];
@@ -207,6 +209,8 @@ export class MapsComponent implements OnInit {
   ];
 
 
+
+
   ngOnInit() {
     this.map.getLocation().subscribe(data => {
       this.devices = data;
@@ -216,5 +220,10 @@ export class MapsComponent implements OnInit {
     });
   }
 
+  mapClick(event): void {
+    this.devices.push({ name: '1', latitude: event.coords.lat, longitude: event.coords.lng });
+  }
+
 
 }
+
