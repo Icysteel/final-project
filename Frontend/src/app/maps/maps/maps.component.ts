@@ -3,6 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { DeviceModel } from 'src/app/devices/device.model';
 import { google } from '@agm/core/services/google-maps-types';
 
+
+export class NewDeviceModel {
+  longitude: number;
+  latitude: number;
+}
+
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
@@ -17,6 +23,7 @@ export class MapsComponent implements OnInit {
 
 
   devices: DeviceModel[];
+  newDevices: NewDeviceModel[];
   lat = 42.6354123;
   lng = 23.3025379;
 
@@ -214,16 +221,24 @@ export class MapsComponent implements OnInit {
   ngOnInit() {
     this.map.getLocation().subscribe(data => {
       this.devices = data;
+      console.log(data);
+      this.newDevices = [];
+      this.newDevices.push({
+        longitude: +data[0].latitude,
+        latitude: +data[0].longitude,
+      });
+      console.log(this.newDevices);
+
       this.lat = this.devices[0].latitude;
       this.lng = this.devices[0].longitude;
-      console.log(this.lat, this.lng);
     });
   }
 
   mapClick(event): void {
-    this.devices.push({ name: '1', latitude: event.coords.lat, longitude: event.coords.lng });
-  }
+    console.log(this.newDevices);
+    this.newDevices.push({ latitude: event.coords.lat, longitude: event.coords.lng });
 
+  }
 
 }
 

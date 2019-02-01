@@ -2,5 +2,12 @@
   <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" (mapClick)="mapClick($event)">
     <agm-marker *ngFor="let device of devices" [latitude]="device.latitude" [longitude]="device.longitude">
     </agm-marker>
+    <agm-polyline [visible]="true" [strokeWeight]="3" [strokeColor]="'#f90'">
+      <agm-polyline-point *ngFor="let device of newDevices; let i=index" [latitude]="device.latitude" [longitude]="device.longitude">
+        <agm-marker *ngFor="let device of newDevices" [latitude]="device.latitude" [longitude]="device.longitude">
+        </agm-marker>
+      </agm-polyline-point>
+    </agm-polyline>
+
   </agm-map>
 </div>

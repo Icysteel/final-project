@@ -86,11 +86,16 @@ button {
 .navbar-brand:before {
     content: 'In';
     color: white;
+    font-weight: bold;
 
 }
 .navbar-brand:after {
     content: 'Time';
-    color: #f90;
+    color: black;
+    background-color: #f90;
+    border-radius: 12px;
+    padding: 5px;
+    font-weight: bold;
 
 }
 #brand {
