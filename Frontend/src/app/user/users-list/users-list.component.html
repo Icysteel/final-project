@@ -1,8 +1,14 @@
-<h1>Users List</h1>
+<!-- <h1>Users List</h1>
 <h5 *ngFor="let user of users">
     {{user.email}}
     <button class="nav-link btn btn-outline-primary my-2 my-sm-0" (click)="deleteUser(user)">delete</button>
-</h5>
+</h5> -->
 
-<ag-grid-angular style="width: 500px; height: 500px;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs">
-</ag-grid-angular>
+<tr>
+    <th>Email</th>
+    <th>Delete</th>
+</tr>
+<tr *ngFor="let user of users">
+    <td>{{user.email}}</td>
+    <td><button class="nav-link btn btn-outline-primary my-2 my-sm-0" (click)="deleteUser(user)">delete</button></td>
+</tr>
