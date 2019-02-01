@@ -3,12 +3,13 @@
     {{user.email}}
     <button class="nav-link btn btn-outline-primary my-2 my-sm-0" (click)="deleteUser(user)">delete</button>
 </h5> -->
-
-<tr>
-    <th>Email</th>
-    <th>Delete</th>
-</tr>
-<tr *ngFor="let user of users">
-    <td>{{user.email}}</td>
-    <td><button class="nav-link btn btn-outline-primary my-2 my-sm-0" (click)="deleteUser(user)">delete</button></td>
-</tr>
+<table class="usersTable" cellspacing="5" cellpadding="5" border="3">
+    <tr>
+        <th>Email</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.email}}</td>
+        <td><button class="nav-link btn btn-outline-primary my-2 my-sm-0" (click)="deleteUser(user)">delete</button></td>
+    </tr>
+</table>

@@ -8,7 +8,7 @@
 .btn-menu {
     background: transparent;
     border-color: #f90;
-    color:#f90;
+    color: #f90;
     border: none
 }
 
@@ -17,34 +17,32 @@
     border: 1px solid;
     border-radius: 12px;
     border-color: #f90;
-    color:black;
-    color:#f90;
-  }
+    color: black;
+    color: #f90;
+}
 
 .navbar-brand {
-    color:#f90
+    color: #f90
 }
 
 body {
     background: black;
-    color:#f90;
-
+    color: #f90;
 }
 
-
-.nav-link{
-    color:#f90;
+.nav-link {
+    color: #f90;
 }
 
 .btn-outline-primary {
     background-color: transparent;
     outline: #f90;
     background: transparent;
-    color:#f90;
+    color: #f90;
 }
 
 .btn-primary {
-    color:#f90;
+    color: #f90;
     background-color: transparent;
     border: 1px solid;
     border-radius: 12px;
@@ -52,12 +50,12 @@ body {
 }
 
 .active {
-    background-color: transparent; 
-    color:#f90;
+    background-color: transparent;
+    color: #f90;
 }
 
 .btn-outline-primary2 {
-    color:#f90;
+    color: #f90;
     background-color: transparent;
     outline: #f90;
     background: transparent;
@@ -66,18 +64,18 @@ body {
     border-color: #f90;
 }
 
-.nav-link{
-    color:#f90
+.nav-link {
+    color: #f90
 }
 
 button {
-    color:#f90
+    color: #f90
 }
 
 .agm-map-container-inner {
     border-radius: 12px;
-    border:1px solid #f90
-  }
+    border: 1px solid #f90
+}
 
 .navbar a {
     color: #f90 !important;
@@ -87,8 +85,8 @@ button {
     content: 'In';
     color: white;
     font-weight: bold;
-
 }
+
 .navbar-brand:after {
     content: 'Time';
     color: black;
@@ -96,17 +94,27 @@ button {
     border-radius: 12px;
     padding: 5px;
     font-weight: bold;
-
 }
+
 #brand {
     font-size: 1.5rem
 }
 
 .ag-cell {
-    background:black;
-    color:white
+    background: black;
+    color: white
 }
-.ag-center-cols-viewport{
-    background:black;
-    color:white
+
+.ag-center-cols-viewport {
+    background: black;
+    color: white
+}
+
+.usersTable {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    /* display: inline-block; */
+    /* width: 30%; */
 }
