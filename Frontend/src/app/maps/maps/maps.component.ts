@@ -1,7 +1,6 @@
 import { MapsService } from './../maps.service';
 import { Component, OnInit } from '@angular/core';
 import { DeviceModel } from 'src/app/devices/device.model';
-import { google } from '@agm/core/services/google-maps-types';
 
 
 export class NewDeviceModel {
@@ -16,6 +15,7 @@ export class NewDeviceModel {
 })
 
 export class MapsComponent implements OnInit {
+  interval: any;
 
 
   constructor(private map: MapsService) { }
@@ -215,7 +215,9 @@ export class MapsComponent implements OnInit {
     }
   ];
 
-
+  public origin: any;
+  public destination: any;
+  directions: boolean;
 
 
   ngOnInit() {
@@ -227,18 +229,36 @@ export class MapsComponent implements OnInit {
         longitude: +data[0].latitude,
         latitude: +data[0].longitude,
       });
-      console.log(this.newDevices);
 
       this.lat = this.devices[0].latitude;
       this.lng = this.devices[0].longitude;
+
+      this.refreshData();
+      this.interval = setInterval(() => {
+        this.getDirection();
+      }, 2500);
     });
+  }
+  refreshData(): any {
+    console.log('refresh works');
+    if (this.newDevices.length > 2) {
+      this.directions = true;
+    }
   }
 
   mapClick(event): void {
-    console.log(this.newDevices);
     this.newDevices.push({ latitude: event.coords.lat, longitude: event.coords.lng });
 
   }
 
-}
+  getDirection() {
+    if (this.newDevices.length >= 2) {
+      this.directions = true;
 
+      console.log('getDir works');
+      this.origin = { lat: +this.newDevices[0].latitude.toString(), lng: +this.newDevices[0].longitude.toString() };
+      this.destination = { lat: +this.newDevices[1].latitude, lng: +this.newDevices[1].longitude };
+    }
+  }
+
+}

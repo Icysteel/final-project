@@ -8,18 +8,21 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 export class DevicesService {
   public constructor(private readonly requester: RequesterService) { }
 
+  getArray: any[];
+  param: string;
+
   public getAllDevices(): Observable<any> {
     return this.requester.get('http://localhost:3000/devices');
   }
 
-  public travelTime(): Observable<any> {
-    const queryParams = new HttpParams();
-    queryParams.set('devices', ['123'].join(', '));
+  public getFromApi(params: string): Observable<any> {
+    this.getAllDevices().subscribe(data => this.getArray = data);
+    console.log(this.getArray);
     const date = { from: 1549019956549, to: 1549019956590 };
-
-    const headers = new HttpHeaders();
     return this.requester.get(
       // tslint:disable-next-line:max-line-length
-      `http://ec2-35-158-53-19.eu-central-1.compute.amazonaws.com:8080/api/travelTimeTableData?devices=123,456&date=${JSON.stringify(date)}`);
+      `http://ec2-35-158-53-19.eu-central-1.compute.amazonaws.com:8080/api/travelTimeTableData?devices=${params}&date=${JSON.stringify(date)}`)
+      ;
   }
+
 }

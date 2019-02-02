@@ -19,7 +19,7 @@ import { ServerErrorInterceptor } from './interceptors/server-error-interceptor.
 import { ToastrModule } from 'ngx-toastr';
 import { AgmCoreModule } from '@agm/core';
 import { MapsComponent } from './maps/maps/maps.component';
-
+import { AgmDirectionModule } from 'agm-direction';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { MapsComponent } from './maps/maps/maps.component';
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC0f-YBwWtejrfq6Utg3FFr4b3UG3oEJaY'
-    })
+    }),
+    AgmDirectionModule
   ],
   providers: [
     {
