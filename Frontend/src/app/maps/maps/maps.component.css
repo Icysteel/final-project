@@ -1,12 +1,11 @@
 agm-map{
     height: 400px;
-  width: 100%;
-
+    width: 100%;
 }
 
 .map {
   margin:auto;
   width:50%;
-padding-top:40px
+  padding-top:40px
 }
 

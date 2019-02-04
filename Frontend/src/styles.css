@@ -26,8 +26,10 @@
 }
 
 body {
-    background: black;
+    height: 100%;
+    background-image: url("Untitled-2.jpg");
     color: #f90;
+
 }
 
 .nav-link {
@@ -74,7 +76,7 @@ button {
 
 .agm-map-container-inner {
     border-radius: 12px;
-    border: 1px solid #f90
+    border: 2px solid #f90
 }
 
 .navbar a {
