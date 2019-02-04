@@ -8,16 +8,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 export class DevicesService {
   public constructor(private readonly requester: RequesterService) { }
 
-  getArray: any[];
-  param: string;
-
   public getAllDevices(): Observable<any> {
     return this.requester.get('http://localhost:3000/devices');
   }
 
   public getFromApi(params: string): Observable<any> {
-    this.getAllDevices().subscribe(data => this.getArray = data);
-    console.log(this.getArray);
+    let getArray = [];
+    this.getAllDevices().subscribe(data => getArray = data);
     const date = { from: 1549019956549, to: 1549019956590 };
     return this.requester.get(
       // tslint:disable-next-line:max-line-length

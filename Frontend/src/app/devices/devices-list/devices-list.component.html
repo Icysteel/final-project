@@ -1,4 +1,16 @@
-<h1>devices List</h1>
-<h5 *ngFor="let device of devices">
-    {{device.name}}
-</h5>
+<h1>Devices</h1>
+
+<table class="usersTable" cellspacing="5" cellpadding="5" border="3">
+    <th>Names</th>
+    <th *ngFor="let dev of devicesNames">
+        {{dev}}
+    </th>
+    <tr *ngFor="let time of table; let i=index">
+        <th>
+            {{table[i][0]}}
+        </th>
+        <th *ngFor="let name of devicesNames">
+            {{table[i][1][name]}}
+        </th>
+    </tr>
+</table>

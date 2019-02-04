@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AgmCoreModule } from '@agm/core';
 import { MapsComponent } from './maps/maps/maps.component';
 import { AgmDirectionModule } from 'agm-direction';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { AgmDirectionModule } from 'agm-direction';
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC0f-YBwWtejrfq6Utg3FFr4b3UG3oEJaY'
+      apiKey: environment.API_KEY
     }),
     AgmDirectionModule
   ],
