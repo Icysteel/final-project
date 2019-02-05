@@ -9,7 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class МodalComponent {
   @ViewChild('content') public modalContent: ElementRef;
 
-  public constructor(private readonly modalService: NgbModal) {}
+  public constructor(private readonly modalService: NgbModal) { }
 
   public open(): void {
     this.modalService.open(this.modalContent);

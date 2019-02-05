@@ -1,3 +1,4 @@
+import { DevicesListComponent } from './devices/devices-list/devices-list.component';
 import { MapsComponent } from './maps/maps/maps.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';

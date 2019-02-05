@@ -38,9 +38,10 @@ body {
 
 .btn-outline-primary {
     background-color: transparent;
-    outline: #f90;
+    outline: #007bff;
     background: transparent;
     color: #f90;
+
 }
 
 .btn-primary {
@@ -54,6 +55,7 @@ body {
 .active {
     background-color: transparent;
     color: #f90;
+    
 }
 
 .btn-outline-primary2 {
@@ -112,11 +114,16 @@ button {
     color: white
 }
 
-.usersTable {
+.tables {
     align-items: center;
     justify-content: center;
     margin: auto;
     margin-top: 50px;
-    /* display: inline-block; */
-    /* width: 30%; */
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 0 5px black;
 }

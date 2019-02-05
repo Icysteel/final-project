@@ -1,6 +1,7 @@
 import { DevicesService } from './../devices.service';
-import { Component, OnInit } from '@angular/core';
-import { log } from 'util';
+import { Component, OnInit, ViewChild, EventEmitter, Output, Input } from '@angular/core';
+
+import { МodalComponent } from 'src/app/shared/modal/modal.component';
 
 
 @Component({
@@ -9,6 +10,11 @@ import { log } from 'util';
 })
 export class DevicesListComponent implements OnInit {
   constructor(private readonly devicesService: DevicesService) { }
+
+  @ViewChild(МodalComponent) public modal: МodalComponent;
+  @Input() public title: string;
+  @Output() public getPostTitle = new EventEmitter<string>();
+
 
   devices: any[];
   devicesNames = [];
@@ -31,8 +37,6 @@ export class DevicesListComponent implements OnInit {
         console.log('table:');
 
         console.log(this.table);
-
-
       });
 
     });

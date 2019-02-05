@@ -1,3 +1,4 @@
+import { DevicesService } from './../../devices/devices.service';
 import { MapsService } from './../maps.service';
 import { Component, OnInit } from '@angular/core';
 import { DeviceModel } from 'src/app/devices/device.model';
@@ -17,10 +18,7 @@ export class NewDeviceModel {
 export class MapsComponent implements OnInit {
   interval: any;
 
-
   constructor(private map: MapsService) { }
-
-
 
   devices: DeviceModel[];
   newDevices: NewDeviceModel[];
@@ -260,5 +258,8 @@ export class MapsComponent implements OnInit {
       this.destination = { lat: +this.newDevices[1].latitude, lng: +this.newDevices[1].longitude };
     }
   }
+
+
+
 
 }

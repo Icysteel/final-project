@@ -1,6 +1,6 @@
-<h1>Devices</h1>
+<h1>Travel time for all devices</h1>
 
-<table class="usersTable" cellspacing="5" cellpadding="5" border="3">
+<table class="tables" cellspacing="5" cellpadding="5" border="3">
     <th>Names</th>
     <th *ngFor="let dev of devicesNames">
         {{dev}}
@@ -12,5 +12,6 @@
         <th *ngFor="let name of devicesNames">
             {{table[i][1][name]}}
         </th>
+
     </tr>
 </table>
