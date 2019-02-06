@@ -1,17 +1,62 @@
 <h1>Travel time for all devices</h1>
 
-<table class="tables" cellspacing="5" cellpadding="5" border="3">
-    <th>Names</th>
-    <th *ngFor="let dev of devicesNames">
-        {{dev}}
-    </th>
+<table class="tables" cellpadding="17" *ngIf="ngReady">
+    <tr style="border-bottom:1pt solid #f90">
+        <th>Names</th>
+        <th *ngFor="let dev of selectedDevices">
+            {{dev}}
+        </th>
+    </tr>
     <tr *ngFor="let time of table; let i=index">
         <th>
             {{table[i][0]}}
         </th>
-        <th *ngFor="let name of devicesNames">
+        <th *ngFor="let name of selectedDevices">
             {{table[i][1][name]}}
         </th>
 
     </tr>
 </table>
+
+<!-- Button trigger modal -->
+<div style="margin:auto; text-align: center; padding-top: 40px">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Select devices
+    </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="width: 50%; text-align: center" id="exampleModalLabel">All devices:</h5>
+                <h5 class="modal-title" style="width: 50%; text-align: center" id="exampleModalLabel">Selected devices:</h5>
+            </div>
+            <div class="modal-body" style="display:flex">
+                <table class="devicesTable">
+                    <tr>
+                        <div *ngFor="let dev of devicesNames" (click)="compareTimes(dev)">
+                            <div *ngIf="show">
+                                {{dev}}
+                            </div>
+                        </div>
+                    </tr>
+                </table>
+                <table class="devicesTable">
+
+                    <tr>
+                        <div *ngFor="let dev of selectedDevices" (click)="removeDevice(dev)">
+                            <div *ngIf="show">
+                                {{dev}}
+                            </div>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="callNg()" data-dismiss="modal">Select</button>
+            </div>
+        </div>
+    </div>
+</div>
